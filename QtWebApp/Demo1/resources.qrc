@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>index.html</file>
+        <file>Scripts/qwebchannel.js</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<!--        
+        <script language="javascript" src="Scripts/jquery-2.1.0.min.js"></script>
+        <script language="javascript" src="Scripts/r.js"></script>
+-->        
+        <script language="javascript" src="Scripts/json2.js"></script>
+        <script language="javascript" src="Scripts/modules/exports.js"></script>
+        <script language="javascript" src="Scripts/modules/jsdefinevar.js"></script>
+        <script language="javascript" src="Scripts/modules/jswebconnection.js"></script>
+        <script language="javascript" src="Scripts/index.js"></script>
+    </head>
+    <body onload="jsmain.populate('chkList')">
+        <img src="Schmetterling klein.png">
+        Try one of the following examples:
+        <p>
+        <ul>
+          <li><a href="/webservice/api/execute">Web Service HTTP request</a>
+          <li><a href="/dump">Dump HTTP request</a>
+          <li><a href="/template">Dynamic website using a template engine</a>
+          <li><a href="/form">HTML form</a>
+          <li><a href="/file">File upload form</a>
+          <li><a href="/session">Session demo</a>
+        </ul>
+        <h1>WakeOnLan</h1>
+        <input type="checkbox" onClick="jsmain.toggle(this)">All</input>
+        <hr />
+        <table>
+            <tr>
+                <td><div id="chkList"></div></td>
+                <td><div id="resultMsg"></div></td>
+            </tr>
+        </table>
+        <hr />
+        <input type="button" value="Wake On Lan" onclick="jsmain.wakeOnLan()"></input>
+    </body>
+</html>

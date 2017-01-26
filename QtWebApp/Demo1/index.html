@@ -1,0 +1,52 @@
+<!--    
+    <script type="text/javascript" src="qrc:///qtwebchannel/qwebchannel.js"></script>
+-->
+    <script language="javascript" src="Scripts/qwebchannel.js"></script>
+    <script type="text/javascript">
+var widget;
+
+// Initialise connection to QT C++
+function initialize() {
+  if (typeof qt != 'undefined') {
+    new QWebChannel(qt.webChannelTransport, function(channel) {
+      widget = channel.objects.widget;
+      //alert(widget);
+      //jj = channel.objects.AbstractNoScriptObject;
+      //alert(jj);
+      /*
+      var result = jj.getTest("NickNick", function(result) {
+          alert("jj=" + result);
+      });
+      */
+      //dv = channel.objects.ComponentDevelopment;
+      //var resultdv = dv.displayValue("dvdvdvdv");
+      //alert("resultdv=" + resultdv);
+      //dv.displayValue("nick");
+
+      //dv = channel.objects.ComponentDevelopment;
+      //dv.displayValue("test");
+      rr = channel.objects.ComponentRequestResponse;
+      rr.getRequest(function(result) {
+          var jsonparse = JSON.parse(result);
+          var idMethod = jsonparse.ID_METHOD;
+          alert(idMethod);
+          var nick = "rrRequest=" + result;
+          alert(nick);
+          rr.setResponse(nick);
+          rr.getResponse(function(result) {
+              alert("rrResponse=" + result);
+              widget.finish();
+          });
+      });
+      //var resultdv = dv.displayValue("dvdvdvdv");
+      
+    });
+  }
+}
+    </script>
+  </head>
+  <body onload="initialize()" bgcolor="#000000">
+    <canvas id="canvas" width="400" height="150"></canvas>
+  </body>
+</html>
+
